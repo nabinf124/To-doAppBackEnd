@@ -62,8 +62,8 @@ public ResponseEntity<TaskEntity> updateTaskById(
 @PreAuthorize("hasRole('admin')")
 @DeleteMapping("/{id}")
 public ResponseEntity<TaskEntity> deleteByUserId(@PathVariable("id")long id){
+	System.out.println("Delete Mapping");
 	TaskEntity deletedTask= taskInterface.deleteById(id);
 	return ResponseEntity.ok(deletedTask);
 }
-
 }
